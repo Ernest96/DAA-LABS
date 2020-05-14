@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:extensions="clr-namespace:Anunturi.Mobile.MarkupExtensions"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Anunturi.Mobile.Views.PushView">
+    
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <ActivityIndicator IsRunning="{Binding IsBusy}" Margin="20" IsVisible="{Binding IsBusy}"/>
+                <Label HorizontalOptions="CenterAndExpand" TextColor="Black" Margin="0, 10, 0, 0" FontAttributes="Bold" FontSize="Medium" Text="{Binding Subject}"/>
+                <Image HorizontalOptions="End" WidthRequest="32" Source="commentary.png" Margin="0, -30, 10, 0" IsVisible="{Binding IsBusy, Converter={StaticResource InverseBoolean}}">
+                    <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ViewCommentsCommand}"></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+                <BoxView HeightRequest="1" Color="Black" Margin="0, 5" IsVisible="{Binding IsBusy, Converter={StaticResource InverseBoolean}}"/>
+                <WebView Margin="10, 5, 10, 5" Source="{Binding WebViewSource}" VerticalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

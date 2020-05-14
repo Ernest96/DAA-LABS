@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:Anunturi.Mobile.Infrastructure.Behaviors"
+             x:Class="Anunturi.Mobile.Views.MenuView"
+             Title="Menu">
+
+    <Grid RowSpacing="0">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*" />
+            <RowDefinition Height="9*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" BackgroundColor="#253447">
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <Label Text="Scorpio CSR" TextColor="White">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Anunturi" FontAttributes="Bold" FontSize="Large" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+        </Grid>
+
+        <Grid Grid.Row="1" BackgroundColor="#253447">
+            <StackLayout>
+                <Label Text="MENU" TextColor="#5b5d68" Margin="10,0"/>
+                <BoxView HeightRequest="3" Color="#5b5d68"></BoxView>
+
+                <ListView ItemsSource="{Binding MenuItems}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" CachingStrategy="RecycleElement" HasUnevenRows="True" SeparatorColor="#5b5d68" >
+                    <ListView.Behaviors>
+                        <behaviors:EventToCommandBehavior EventName="ItemTapped" Command="{Binding MenuItemTappedCommand}"></behaviors:EventToCommandBehavior>
+                    </ListView.Behaviors>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid ColumnSpacing="12" Padding="10, 10, 0, 10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0" Source="{Binding IconSource}" WidthRequest="30" HeightRequest="30" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Text="{Binding MenuText}" VerticalOptions="Center" TextColor="White"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+        </Grid>
+
+    </Grid>
+
+
+</ContentPage>

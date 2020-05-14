@@ -1,0 +1,17 @@
+﻿<Window x:Class="AnunturiDesktop.SmsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        xmlns:local="clr-namespace:AnunturiDesktop"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Sms" Height="275" Width="300"  ResizeMode="NoResize">
+    <StackPanel Background="LightGray">
+        <Label Content="Continut:" Foreground="Black" Margin="18, 5, 0, 0"/>
+        <TextBox Name="Content" Height="135" Width="250" Margin="10" TextWrapping="Wrap" AcceptsReturn="True" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto"/>
+        <Button Name="Send" Content="Transmite" Width="100" Click="Send_Click"/>
+        <Image Name="Loading" gif:ImageBehavior.AnimatedSource="Resources/load.gif" Margin="0, -5" Width="40" Visibility="Hidden"/>
+    </StackPanel>
+</Window>

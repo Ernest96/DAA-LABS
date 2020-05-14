@@ -1,0 +1,52 @@
+﻿<Page x:Class="AnunturiDesktop.Pages.MenuPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AnunturiDesktop.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="550"
+      Title="Menu">
+
+    <Border BorderBrush="White" BorderThickness="1">
+
+        <Grid Background="#1F2326">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Grid.Row="0" Margin="55" Background="#2e3137" Foreground="White" BorderThickness="1" BorderBrush="LightGray" Name="Publish" Click="Publish_Click">
+                <StackPanel>
+                    <Image Source="../Resources/publish.png" Width="54" Margin="22, 0, 0, 10" />
+                    <TextBlock FontSize="16" Margin="0, 0, 0, 10">Publicare anunt</TextBlock>
+                </StackPanel>
+            </Button>
+
+            <Button Grid.Column="1" Grid.Row="0" Margin="55" Background="#2e3137" Foreground="White" BorderThickness="1" BorderBrush="LightGray" Name="Sms" Click="Sms_Click">
+                <StackPanel>
+                    <Image Source="../Resources/sms.png" Width="50" Margin="0, 0, 0, 10" />
+                    <TextBlock FontSize="16" Width="31">SMS</TextBlock>
+                </StackPanel>
+            </Button>
+
+            <Button Grid.Column="0" Grid.Row="1" Margin="55" Background="#2e3137" Foreground="White" BorderThickness="1" BorderBrush="LightGray" Name="Register" Click="Register_Click">
+                <StackPanel>
+                    <Image Source="../Resources/adduser.png" Width="50"  Margin="0, 0, 0, 5" />
+                    <TextBlock FontSize="16">Înregistare</TextBlock>
+                </StackPanel>
+            </Button>
+
+            <Button Grid.Column="1" Grid.Row="1" Margin="55" Background="#2e3137" Foreground="White" BorderThickness="1" BorderBrush="LightGray" Name="Users" Click="Users_Click">
+                <StackPanel>
+                    <Image Source="../Resources/people.png" Width="50"  Margin="0, 0, 0, 5" />
+                    <TextBlock FontSize="16">Utilizatori</TextBlock>
+                </StackPanel>
+            </Button>
+        </Grid>
+    </Border>
+</Page>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:Anunturi.Mobile.Views"
+             xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors" 
+             x:Class="Anunturi.Mobile.Views.PushesMainView">
+
+    <Grid RowSpacing="3" Margin="0, 2">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="8*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <views:UserInfoView BindingContext="{Binding UserInfoViewModel}"/>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <views:PushesInfoView BindingContext="{Binding PushesInfoViewModel}"/>
+        </Grid>
+
+    </Grid>
+    
+</ContentPage>

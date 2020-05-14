@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Anunturi.Mobile.Views.MainView"
+             xmlns:views="clr-namespace:Anunturi.Mobile.Views"
+             Title="Scorpio CSR"
+             MasterBehavior="Popover">
+    
+  <MasterDetailPage.Master>
+        <views:MenuView BindingContext="{Binding MenuViewModel}" />
+   </MasterDetailPage.Master>
+    
+  <MasterDetailPage.Detail>
+        <ContentPage></ContentPage>
+   </MasterDetailPage.Detail>
+    
+</MasterDetailPage>

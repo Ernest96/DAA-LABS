@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:extensions="clr-namespace:Anunturi.Mobile.MarkupExtensions"
+             x:Class="Anunturi.Mobile.Views.LoginView">
+
+    <ContentPage.Content>
+        
+
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource ColorPrimaryDark}">
+
+            <StackLayout  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="10, 0" WidthRequest="300">
+
+                <ActivityIndicator IsRunning="{Binding IsBusy}"/>
+
+                <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="White" Margin="0,10">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Anunturi Mobile" FontSize="Large" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Entry Placeholder="Username" PlaceholderColor="LightGray" TextColor="White" Text="{Binding Username}" FontSize="14"/>
+                <Entry IsPassword="True" Placeholder="Password" PlaceholderColor="LightGray" TextColor="White" Text="{Binding Password}" FontSize="14"/>
+                <!--<extensions:CustomPicker Title="{Binding SelectedLanguageText}"
+                                         ItemsSource="{Binding LanguageList}"
+                                         ItemDisplayBinding="{Binding Name}"
+                                         SelectedItem="{Binding SelectedLanguage}">
+                </extensions:CustomPicker>-->
+
+                <Button Margin="0, 20, 0, 0" HorizontalOptions="Center" MinimumWidthRequest="120" WidthRequest="140" HeightRequest="40" 
+                        CornerRadius="10" FontSize="Small" Text="{extensions:Translate LoginButtonText}" TextColor="White" BackgroundColor="{StaticResource ColorAccent}" 
+                        Command="{Binding LogInCommand}" IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolean}}"/>
+                
+            </StackLayout>
+            
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

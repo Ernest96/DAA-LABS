@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Anunturi.Mobile.App"
+             xmlns:converters="clr-namespace:Anunturi.Mobile.MarkupExtensions.Converters"
+             xmlns:resources="clr-namespace:Anunturi.Mobile.Resources">
+  
+    <Application.Resources>
+        <ResourceDictionary>
+          <converters:InverseBooleanConverter x:Key="InverseBoolean" />
+            <ResourceDictionary.MergedDictionaries>
+              <resources:Colors />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+  
+</Application>
